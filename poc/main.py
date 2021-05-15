@@ -21,7 +21,7 @@ class QcrawlSpider(CrawlSpider):
                 'overwrite': True
             }
         }
-    }
+    } 
 
     rules = (
         Rule(LinkExtractor(allow=r'page/.*'), callback='parse_item', follow=True),
