@@ -31,7 +31,7 @@ class QcrawlSpider(CrawlSpider):
         item = QuoteItems()
         item['quote'] =response.css('span.text::text').extract()
         item['author'] = response.css('small.author::text').extract()
-        item['tags'] = response.css('div.tags a.tag::text').getall()
+        item['tags'] = response.css('div.tags a.tag::text').extract()
         yield item
 
 def scrap():
