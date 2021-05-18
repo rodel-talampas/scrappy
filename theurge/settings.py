@@ -62,9 +62,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'theurge.pipelines.TheurgePipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'theurge.pipelines.EmptyItemPipeline': 300,
+   'theurge.pipelines.TheurgePipeline': 400,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -91,7 +92,9 @@ FEED_EXPORT_BATCH_ITEM_COUNT = 20
 FEEDS = {
     'sale-%(batch_id)d.jl' : {
                 'format' : 'jl',
-                'store_empty' : True,
+                'store_empty' : False,
+                'fields': ['title','brand','description','price','salePrice'],
                 'overwrite': True
             }
 }
+CLOSESPIDER_ITEMCOUNT=50

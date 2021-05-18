@@ -1,0 +1,24 @@
+# Template
+
+# <spider name>:
+#    css:
+#       field1: css_mapping_1
+#       field2: css_mapping_2
+#       ...
+#       fieldn: css_mapping_n
+#    xpath:
+#       field1: xpath_mapping_1
+#       field2: xpath_mapping_2
+#       ...
+#       fieldn: xpath_mapping_n
+
+# Restriction:
+#    The fields defined in this config should be present in the item definition used by the spider
+urge:
+  css:
+    title: "h1._31Nwh.JLwaS::text"
+    price: "div.eP0wn._2xJnS span._2plVT::text"
+    brand: "span.URfXD::text"
+  xpath:
+    salePrice: "//*[@class='_2Mqpk']/a[1]/div[2]/text()[2]"
+    description: "//article/a/p/text()"
