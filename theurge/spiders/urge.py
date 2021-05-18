@@ -7,8 +7,9 @@ import yaml
 import datetime
 import socket
 import os
+from theurge.spiders.spider import Keeper
 
-class UrgeSpider(CrawlSpider):
+class UrgeSpider(CrawlSpider, Keeper):
     name = 'urge'
     allowed_domains = ['theurge.com']
     start_urls = ['https://theurge.com']
@@ -49,10 +50,6 @@ class UrgeSpider(CrawlSpider):
         for key in xpath_items:
             item[key] = selector.xpath(xpath_items[key]).get()
 
-        # Housekeeping fields
-        item['url'] = response.url
-        item['project'] = self.settings.get('BOT_NAME')
-        item['spider'] = self.name
-        item['server'] = socket.gethostname()
-        item['date'] = datetime.datetime.now()
+        # call house keeping method
+        self.add_keeper_info(item,response)
         return item
