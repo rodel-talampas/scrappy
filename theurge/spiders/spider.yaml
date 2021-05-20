@@ -16,9 +16,10 @@
 #    The fields defined in this config should be present in the item definition used by the spider
 urge:
   css:
-    title: "h1._31Nwh.JLwaS::text"
+    category: "h1._31Nwh.JLwaS::text"
     price: "div.eP0wn._2xJnS span._2plVT::text"
     brand: "span.URfXD::text"
+    website: "a.ZV4Wf::text"
   xpath:
     salePrice: "//*[@class='_2Mqpk']/a[1]/div[2]/text()[2]"
     description: "//article/a/p/text()"

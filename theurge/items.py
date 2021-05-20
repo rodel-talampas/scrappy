@@ -15,9 +15,12 @@ class RetailItem(scrapy.Item):
     description = scrapy.Field()
     brand = scrapy.Field()
     category = scrapy.Field()
+    website = scrapy.Field()
 
     # Housekeeping fields
     url = scrapy.Field()
+    category_param = scrapy.Field()
+    brand_param = scrapy.Field()
     project = scrapy.Field()
     spider = scrapy.Field()
     server = scrapy.Field()

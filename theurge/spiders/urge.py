@@ -1,12 +1,13 @@
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.selector import Selector
+from scrapy.utils.log import configure_logging
 
 from theurge.items import RetailItem
+import sys
 import yaml
-import datetime
-import socket
 import os
+import logging
 from theurge.spiders.spider import Keeper
 
 class UrgeSpider(CrawlSpider, Keeper):
@@ -23,6 +24,13 @@ class UrgeSpider(CrawlSpider, Keeper):
     global config
     with open(r'%s/spider.yaml' % dir_path) as file:
             config = yaml.load(file, Loader=yaml.FullLoader)
+
+    # Create Log Files
+    LOG_FILE = 'logs/spider.log'
+    ERR_FILE = 'logs/spider_error.log'
+    configure_logging(install_root_handler=False)
+    logging.basicConfig(level=logging.INFO, filemode='w+', filename=LOG_FILE)
+    logging.basicConfig(level=logging.ERROR, filemode='w+', filename=ERR_FILE)
 
 
     # This method parses the item per extract in the page

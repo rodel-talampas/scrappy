@@ -16,7 +16,8 @@ class TheurgePipeline:
 class EmptyItemPipeline:
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
-        if not adapter['salePrice'] and not adapter['price'] and not adapter['brand'] and not adapter['description']:
+        if not adapter['salePrice'] and not adapter['price'] \
+            and not adapter['brand'] and not adapter['description'] and not adapter['category']:
             raise DropItem(f"Empty Item: {item!r}")
         else:
             return item
