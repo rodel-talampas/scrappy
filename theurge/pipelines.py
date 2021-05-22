@@ -21,3 +21,11 @@ class EmptyItemPipeline:
             raise DropItem(f"Empty Item: {item!r}")
         else:
             return item
+
+class ItemCountPipeline:
+    def process_item(self, item, spider):
+        if spider.total_items >= spider.total_item_to_extract:
+            raise DropItem(f"Empty Item: {item!r}")
+        else:
+            spider.total_items = spider.total_items + 1
+            return item

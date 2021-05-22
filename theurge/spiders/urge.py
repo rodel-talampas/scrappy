@@ -10,10 +10,17 @@ import os
 import logging
 from theurge.spiders.spider import Keeper
 
+from scrapy.utils.project import get_project_settings
+
+
 class UrgeSpider(CrawlSpider, Keeper):
     name = 'urge'
+    test = 'rodel'
     allowed_domains = ['theurge.com']
     start_urls = ['https://theurge.com']
+    settings = get_project_settings()
+    total_item_to_extract = settings.getint('TOTAL_ITEMCOUNT', 300)
+    total_items = 0
 
     rules = (
         Rule(LinkExtractor(), callback='parse_item', follow=True),

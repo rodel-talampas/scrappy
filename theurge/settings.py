@@ -32,20 +32,22 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'theurge.middlewares.TheurgeSpiderMiddleware': 543,
-#}
+# SPIDER_MIDDLEWARES = {
+#    'theurge.middlewares.TheurgeSpiderMiddleware': 500,
+# }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'theurge.middlewares.TheurgeDownloaderMiddleware': 543,
+   'theurge.middlewares.TheurgeDownloaderMiddleware': 450,
+   # 'theurge.middlewares.TheurgeItemCountMiddleware': 500,
 }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 EXTENSIONS = {
-   'theurge.extensions.TheurgeStatsLogging': 500,
+   'theurge.extensions.TheurgeStatsLogging': 600,
+   # 'theurge.extensions.TheurgeCountsFilter': 500,
 }
 
 STATS_LOGGING_EXTENSION_ENABLED = True
@@ -55,6 +57,7 @@ LOGSTATS_INTERVAL = 5
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'theurge.pipelines.EmptyItemPipeline': 300,
+   'theurge.pipelines.ItemCountPipeline': 320,
    'theurge.pipelines.TheurgePipeline': 400,
 }
 
@@ -69,4 +72,6 @@ FEEDS = {
                 'overwrite': True
             }
 }
-CLOSESPIDER_ITEMCOUNT=50
+CLOSESPIDER_ITEMCOUNT=300
+CONCURRENT_ITEMS=50
+TOTAL_ITEMCOUNT=300
