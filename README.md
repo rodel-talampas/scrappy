@@ -72,6 +72,25 @@ Tried to implement both `extensions` and `middlewares` but still did not guarant
 
 ```
 
+The generated items are saved in file named `sales-<index>.jl` where `<index>` are sequence number from 1 to N. This and the other feed settings are configured in the settings.py.
+
+```
+FEED_EXPORT_BATCH_ITEM_COUNT = 20
+FEEDS = {
+    'sale-%(batch_id)d.jl' : {
+                'format' : 'jl',
+                'store_empty' : False,
+                # These are the fields that will be included in the JL file/s. 
+                # These fields needs to be defined in the items.py
+                'fields': ['title','brand','description','price','salePrice','website'],
+                'overwrite': True
+            }
+}
+CLOSESPIDER_ITEMCOUNT=300
+CONCURRENT_ITEMS=50
+TOTAL_ITEMCOUNT=300
+```
+
 ### Task 2
 
 I can't find any specific scrapy settings or configuration for this task. To do this, a yaml file `spider.yaml` was introduced. This file will be loaded during spider initialization.
