@@ -333,3 +333,15 @@ To start scraping, run the command
 2021-05-22 16:29:20 [scrapy.core.engine] INFO: Spider closed (closespider_itemcount)
 
 ```
+
+## Author
+
+`Rodel M. Talampas` is a developer/designer/solutions arechitect with 20+ years of IT experience within different domains.
+
+### Bibliography
+
+* PluralSight - https://www.pluralsight.com/guides/crawling-web-python-scrapy
+* Learning Scrapy - https://ilmuteknologi.com/download/unduh/55
+* Scrapy Documentation - https://docs.scrapy.org/
+* LinkedIn Learning - https://www.linkedin.com/learning/web-scraping-with-python/hello-world-with-scrapy?u=2227706
+* The Urge - https://theurge.com / https://theurge.com.au
