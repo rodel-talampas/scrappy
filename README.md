@@ -1,4 +1,4 @@
-# The `scrappy` Project
+# The `scrapy` Project
 
 ## PROJECT FILES
 
@@ -336,7 +336,7 @@ To start scraping, run the command
 
 ## Author
 
-`Rodel M. Talampas` is a developer/designer/solutions arechitect with 20+ years of IT experience within different domains.
+`Rodel M. Talampas` 
 
 ### Bibliography
 
