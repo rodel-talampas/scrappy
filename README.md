@@ -3,6 +3,8 @@
 ## project files
 
 The following are the list of files used by the project
+* requirements.txt
+* scrapy.cfg
 * theurge
     * spider
         * spider.py
