@@ -31,6 +31,7 @@ All processing logs will be stored in the `spider.log` file under the `log` fold
     configure_logging(install_root_handler=False)
     logging.basicConfig(level=logging.INFO, filemode='w+', filename=LOG_FILE)
     logging.basicConfig(level=logging.ERROR, filemode='w+', filename=ERR_FILE)
+```
 
 ### Task 1
 
