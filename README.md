@@ -20,6 +20,17 @@ The following are the list of files used by the project
     * pipelines.py - contains all possible spider pipeline classes including the urge base pipeline and a DropItem pipeline for empty items
     * settings.py - a settings file that turns on / off extensions, middlewares, spider env variables, etc.
 
+### Log File
+
+All processing logs will be stored in the `spider.log` file under the `log` folder.
+
+```
+    # Create Log Files
+    LOG_FILE = 'logs/spider.log'
+    ERR_FILE = 'logs/spider_error.log'
+    configure_logging(install_root_handler=False)
+    logging.basicConfig(level=logging.INFO, filemode='w+', filename=LOG_FILE)
+    logging.basicConfig(level=logging.ERROR, filemode='w+', filename=ERR_FILE)
 
 ### Task 1
 
