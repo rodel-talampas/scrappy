@@ -103,6 +103,19 @@ with open(r'%s/spider.yaml' % dir_path) as file:
     config = yaml.load(file, Loader=yaml.FullLoader)
 ```
 
+`spider.yaml`
+```
+urge:
+  css:
+    category: "h1._31Nwh.JLwaS::text"
+    price: "div.eP0wn._2xJnS span._2plVT::text"
+    brand: "span.URfXD::text"
+    website: "a.ZV4Wf::text"
+  xpath:
+    salePrice: "//*[@class='_2Mqpk']/a[1]/div[2]/text()[2]"
+    description: "//article/a/p/text()"
+```
+
 ### Task 3
 
 There are few ways to do this. The app used the DownloadMiddleware to track down the Download Latency. The `TheurgeDownloaderMiddleware` class is used to log the latency of downloads.
